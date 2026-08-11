@@ -1,0 +1,358 @@
+```python
+# ============================================================
+#                 PYTHON DATETIME MODULE
+# ============================================================
+
+# datetime is a Python module used to work with:
+# - Dates
+# - Times
+# - Date + Time together
+#
+# We are giving the datetime module a shorter name: "dt"
+
+import datetime as dt
+
+
+# ============================================================
+# 1. dt.date.today()
+# ============================================================
+
+print(dt.date.today())
+
+
+# Let's break this down:
+#
+# dt
+# ->
+# This is the short name we gave to the "datetime" module.
+#
+# date
+# ->
+# This represents a DATE.
+# A date contains:
+#   year
+#   month
+#   day
+#
+# today()
+# ->
+# This gets today's date from your computer.
+
+
+# Example output:
+#
+# 2026-08-11
+#
+# The format is:
+#
+# YEAR-MONTH-DAY
+#
+# 2026 = year
+# 08   = month
+# 11   = day
+
+
+# USE:
+# Use date.today() when you only care about the date
+# and don't need the current time.
+#
+# Example:
+# - Today's date
+# - Birthday
+# - Due date
+# - Expiry date
+
+
+# ============================================================
+# 2. dt.datetime.now()
+# ============================================================
+
+print(dt.datetime.now())
+
+
+# Let's break this down:
+#
+# dt
+# ->
+# Our short name for the datetime module.
+#
+# datetime
+# ->
+# Represents BOTH:
+#   DATE + TIME
+#
+# now()
+# ->
+# Gets the current date and current time.
+
+
+# Example output:
+#
+# 2026-08-11 17:40:25.123456
+#
+# Here:
+#
+# 2026       -> year
+# 08         -> month
+# 11         -> day
+# 17         -> hour
+# 40         -> minute
+# 25         -> second
+# 123456     -> microseconds
+
+
+# USE:
+# Use datetime.now() when you need the current
+# date AND time.
+#
+# Examples:
+# - Logging when something happened
+# - Saving the time a user logged in
+# - Recording when an order was placed
+# - Measuring time
+# - Creating timestamps
+
+
+# ============================================================
+# 3. dt.datetime.now().year
+# ============================================================
+
+print(dt.datetime.now().year)
+
+
+# First:
+#
+# dt.datetime.now()
+#
+# gives us the current date + time.
+#
+# Example:
+#
+# 2026-08-11 17:40:25
+#
+# Then:
+#
+# .year
+#
+# extracts ONLY the year.
+#
+# Result:
+#
+# 2026
+
+
+# USE:
+# When you only need the current year.
+#
+# Example:
+#
+# if dt.datetime.now().year == 2026:
+#     print("It is 2026")
+
+
+# ============================================================
+# 4. dt.datetime.now().month
+# ============================================================
+
+print(dt.datetime.now().month)
+
+
+# dt.datetime.now()
+#
+# gives:
+#
+# 2026-08-11 17:40:25
+#
+# .month
+#
+# extracts ONLY the month.
+#
+# Result:
+#
+# 8
+#
+# IMPORTANT:
+# Months are represented by numbers:
+#
+# January   = 1
+# February  = 2
+# March     = 3
+# April     = 4
+# May       = 5
+# June      = 6
+# July      = 7
+# August    = 8
+# September = 9
+# October   = 10
+# November  = 11
+# December  = 12
+
+
+# USE:
+# When you need to know the current month.
+#
+# Example:
+#
+# if dt.datetime.now().month == 12:
+#     print("It's December!")
+
+
+# ============================================================
+# 5. dt.datetime.now().day
+# ============================================================
+
+print(dt.datetime.now().day)
+
+
+# dt.datetime.now()
+#
+# gives:
+#
+# 2026-08-11 17:40:25
+#
+# .day
+#
+# extracts ONLY the day of the month.
+#
+# Result:
+#
+# 11
+
+
+# IMPORTANT:
+# "day" here means the day of the MONTH.
+#
+# For example:
+#
+# 2026-08-11
+#
+# year  = 2026
+# month = 8
+# day   = 11
+
+
+# USE:
+# When you need the current day of the month.
+#
+# Example:
+#
+# if dt.datetime.now().day == 1:
+#     print("It's the first day of the month!")
+
+
+# ============================================================
+#             UNDERSTANDING THE DOTS (.)
+# ============================================================
+
+# This is probably the most important thing to understand.
+#
+# Look at:
+#
+# dt.datetime.now().year
+#
+# We can read it from LEFT to RIGHT:
+#
+# dt
+# ↓
+# datetime module
+#
+# dt.datetime
+# ↓
+# datetime class
+#
+# dt.datetime.now()
+# ↓
+# current date + time
+#
+# dt.datetime.now().year
+# ↓
+# get the year from that date + time
+
+
+# Think of it like a box:
+#
+# datetime.now()
+#
+# ┌──────────────────────────────┐
+# │ 2026-08-11 17:40:25          │
+# │                              │
+# │ year  = 2026                 │
+# │ month = 8                    │
+# │ day   = 11                   │
+# │ hour  = 17                   │
+# │ minute = 40                  │
+# │ second = 25                  │
+# └──────────────────────────────┘
+#
+# .year   -> takes 2026
+# .month  -> takes 8
+# .day    -> takes 11
+
+
+# ============================================================
+#                     QUICK SUMMARY
+# ============================================================
+
+# dt.date.today()
+# -> Gives ONLY today's date.
+#
+# Example:
+# 2026-08-11
+
+
+# dt.datetime.now()
+# -> Gives today's date AND current time.
+#
+# Example:
+# 2026-08-11 17:40:25
+
+
+# dt.datetime.now().year
+# -> Gives ONLY the year.
+#
+# Example:
+# 2026
+
+
+# dt.datetime.now().month
+# -> Gives ONLY the month.
+#
+# Example:
+# 8
+
+
+# dt.datetime.now().day
+# -> Gives ONLY the day of the month.
+#
+# Example:
+# 11
+
+
+# ============================================================
+#                     EASY MEMORY TRICK
+# ============================================================
+
+# date.today()
+#       ↓
+# "What is today's DATE?"
+#
+#
+# datetime.now()
+#       ↓
+# "What is the DATE + TIME right now?"
+#
+#
+# .year
+#       ↓
+# "Give me the YEAR"
+#
+#
+# .month
+#       ↓
+# "Give me the MONTH"
+#
+#
+# .day
+#       ↓
+# "Give me the DAY"
+```
