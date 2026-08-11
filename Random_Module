@@ -1,0 +1,300 @@
+```python
+# ============================================================
+#                 PYTHON RANDOM MODULE
+# ============================================================
+
+import random
+
+
+# ============================================================
+# 1. random.random()
+# ============================================================
+
+# Gives a random DECIMAL number between 0 and 1.
+# 0 is included, but 1 is NOT included.
+
+print(random.random())
+
+# Example output:
+# 0.3748291
+
+# USE:
+# Useful when you need a random decimal/probability.
+# Example: simulations, games, probability.
+
+
+# ============================================================
+# 2. random.randint(start, end)
+# ============================================================
+
+# Gives a random WHOLE number.
+# BOTH start and end are included.
+
+print(random.randint(1, 3))
+
+# Possible results:
+# 1
+# 2
+# 3
+
+# USE:
+# Useful when you need a random whole number.
+# Example: rolling a dice:
+#
+# dice = random.randint(1, 6)
+
+
+# ============================================================
+# 3. random.randrange(start, stop)
+# ============================================================
+
+# Gives a random WHOLE number.
+# The STOP number is NOT included.
+
+print(random.randrange(1, 2))
+
+# Only possible result:
+# 1
+#
+# Because 2 is excluded.
+
+# Example:
+print(random.randrange(1, 5))
+
+# Possible results:
+# 1, 2, 3, 4
+#
+# NOT 5.
+
+
+# ============================================================
+# 4. random.randrange(start, stop, step)
+# ============================================================
+
+# You can also give a STEP.
+#
+# start = where to begin
+# stop  = where to stop (not included)
+# step  = how much to jump each time
+
+print(random.randrange(0, 20, 7))
+
+# Numbers available are:
+# 0, 7, 14
+#
+# So Python randomly chooses one of:
+# 0
+# 7
+# 14
+
+# USE:
+# Useful when you want random numbers with a fixed gap.
+
+
+# ============================================================
+# 5. random.choice(list)
+# ============================================================
+
+fruits = ["apple", "banana", "mango", "orange"]
+
+# choice() chooses ONE random item from the list.
+
+print(random.choice(fruits))
+
+# Possible results:
+# apple
+# banana
+# mango
+# orange
+
+# USE:
+# When you want to randomly choose ONE thing.
+#
+# Example:
+# Random player
+# Random fruit
+# Random question
+# Random winner
+
+
+# ============================================================
+# 6. random.choices(list, k=number)
+# ============================================================
+
+# choices() chooses MULTIPLE random items.
+#
+# IMPORTANT:
+# The same item CAN be selected more than once.
+
+print(random.choices(fruits, k=4))
+
+# Example output:
+# ['apple', 'mango', 'mango', 'banana']
+#
+# Notice:
+# mango appeared twice.
+#
+# That's allowed!
+
+# USE:
+# When you need multiple random selections
+# AND repetition is allowed.
+
+
+# ============================================================
+# 7. random.sample(list, number)
+# ============================================================
+
+numbers = [1, 2, 3, 4, 5]
+
+# sample() chooses MULTIPLE items.
+#
+# IMPORTANT:
+# The same item CANNOT be selected twice.
+
+print(random.sample(numbers, 3))
+
+# Example output:
+# [4, 1, 5]
+#
+# This is NOT possible:
+# [4, 4, 1]
+#
+# because 4 cannot be selected twice.
+
+# USE:
+# When you need multiple random items
+# WITHOUT repetition.
+#
+# Example:
+# Selecting 3 different winners from a group.
+
+
+# ============================================================
+# 8. random.shuffle(list)
+# ============================================================
+
+numbers = [1, 2, 3, 4, 5]
+
+# shuffle() MIXES/REARRANGES the entire list randomly.
+
+random.shuffle(numbers)
+
+print(numbers)
+
+# Example output:
+# [3, 5, 1, 4, 2]
+#
+# Another time it might be:
+# [5, 2, 4, 1, 3]
+
+# IMPORTANT:
+# shuffle() changes the ORIGINAL list.
+
+# USE:
+# Shuffling cards
+# Mixing questions
+# Randomizing players
+# Games
+
+
+# ============================================================
+# 9. random.uniform(start, end)
+# ============================================================
+
+# Gives a random DECIMAL number between start and end.
+
+print(random.uniform(1, 10))
+
+# Example output:
+# 7.384921
+#
+# Another possible result:
+# 2.718293
+
+# Compare:
+#
+# randint(1, 10)  -> whole number
+# uniform(1, 10)  -> decimal number
+
+# USE:
+# When you need a random decimal.
+#
+# Example:
+# Random price
+# Random measurement
+# Simulations
+# Game physics
+
+
+# ============================================================
+#                  EASY MEMORY TRICK
+# ============================================================
+
+# NUMBER FUNCTIONS
+#
+# random()
+#     -> random decimal from 0 to 1
+#
+# randint()
+#     -> random whole number
+#     -> END IS INCLUDED
+#
+# randrange()
+#     -> random whole number
+#     -> END IS NOT INCLUDED
+#
+# uniform()
+#     -> random decimal in your range
+
+
+# LIST FUNCTIONS
+#
+# choice()
+#     -> choose ONE
+#
+# choices()
+#     -> choose MANY
+#     -> repetition ALLOWED
+#
+# sample()
+#     -> choose MANY
+#     -> repetition NOT ALLOWED
+#
+# shuffle()
+#     -> MIX/REARRANGE the whole list
+
+
+# ============================================================
+#                 MOST IMPORTANT DIFFERENCES
+# ============================================================
+
+# randint(1, 5)
+# -> 1, 2, 3, 4, 5
+# -> 5 IS included
+
+
+# randrange(1, 5)
+# -> 1, 2, 3, 4
+# -> 5 is NOT included
+
+
+# choices([1, 2, 3], k=3)
+# -> [1, 1, 3]   # possible
+# -> repetition is allowed
+
+
+# sample([1, 2, 3], 3)
+# -> [2, 1, 3]   # possible
+# -> repetition is NOT allowed
+
+
+# choice([1, 2, 3])
+# -> 2
+# -> ONLY ONE item
+
+
+# shuffle([1, 2, 3])
+# -> [3, 1, 2]
+# -> rearranges the entire list
+```
